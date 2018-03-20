@@ -101,13 +101,6 @@ const Alert = (($) => {
 
     _removeElement(element) {
       $(element).removeClass(ClassName.SHOW)
-
-      if (!Util.supportsTransitionEnd() ||
-          !$(element).hasClass(ClassName.FADE)) {
-        this._destroyElement(element)
-        return
-      }
-
       const transitionDuration = Util.getTransitionDurationFromElement(element)
 
       $(element)
